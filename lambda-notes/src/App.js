@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink} from 'react-router-dom'
+import { Route, NavLink, withRouter} from 'react-router-dom'
 
 import ListView from './components/ListView'
 import Note from './components/Note'
@@ -41,12 +41,12 @@ class App extends Component {
             <NavLink to="/form"><button>+ Create New Note</button></NavLink>
           </li>
         </ul>
-        <Route path="/notes" render={props => {
+        <Route exact path="/notes" render={props => {
           return <ListView {...props} notes={notes} />
         }} />
         <Route />
         <Route path="/notes/:id" render={props => (
-          <Note {...props} />
+          <Note {...props} notes={notes} />
         )} />
         <Route path="/form" render={props => {
           return <CreateForm {...props} />
@@ -57,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

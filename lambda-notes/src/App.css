@@ -50,7 +50,7 @@
 }
 
 .navbar > li > a.activeNavButton {
-  background-color: #f442b9;
+  background-color: #d3d2d3;
   color: white;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .form-wrapper h2 {
-  background: #f442b9;
+  background: #d3d2d3;
   text-transform: uppercase;
   color: white;
   font-size: 18px;

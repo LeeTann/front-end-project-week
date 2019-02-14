@@ -1,19 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const ListView = props => {
   return (
     <div>
       {props.notes.map(note => {
-          return <div className="card" key={note._id}>
-          <p onClick={() => routeToNote(props, note)}>{note.title}<br/> {note.textBody}</p>
-          </div>
+          return (
+            <Link to={`/notes/${note._id}`} className="card" key={note._id}>
+            <p>{note.title}<br/> {note.textBody}</p>
+            </Link>
+          )
       })}
     </div>
   )
-}
-
-function routeToNote(props, note) {
-    props.history.push(`/notes/${note.id}`)
 }
 
 export default ListView
