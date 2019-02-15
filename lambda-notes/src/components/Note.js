@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Note = props => {
-    console.log(props.notes)
-    console.log(props.match.params.id)
 
     const id = props.match.params.id
     const note = props.notes.find(note => `${note._id}` === id)
@@ -11,7 +9,7 @@ const Note = props => {
     return (
         <div>
             <div>
-                <Link to="/">Edit</Link>
+                <Link to={`/edit/${note._id}`}>Edit</Link>
                 <Link to="/">Delete</Link>
             </div>
             {note.title}

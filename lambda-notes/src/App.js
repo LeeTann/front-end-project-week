@@ -4,20 +4,21 @@ import { Route, NavLink, withRouter} from 'react-router-dom'
 import ListView from './components/ListView'
 import Note from './components/Note'
 import CreateForm from './components/CreateForm'
+import EditNote from './components/EditNote'
 
 import axios from 'axios'
 
 import './App.css';
 
 class App extends Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state= {
       notes: [],
     }
   }
 
-  componentDidMount() {
+  getNotes = () => {
     axios.get('https://fe-notes.herokuapp.com/note/get/all')
     .then(res => {
       console.log(res)
@@ -28,6 +29,10 @@ class App extends Component {
     })
   }
 
+  componentDidMount() {
+    this.getNotes()
+  }
+
   render() {
     const { notes } = this.state
     return (
@@ -35,23 +40,25 @@ class App extends Component {
         <ul className="navbar">
           <h1>Lambda Notes</h1>
           <li>
-            <NavLink to="/notes"><button>View Your Notes</button></NavLink>
+            <NavLink to="/"><button>View Your Notes</button></NavLink>
           </li>
           <li>
             <NavLink to="/form"><button>+ Create New Note</button></NavLink>
           </li>
         </ul>
-        <Route exact path="/notes" render={props => {
+        <Route exact path="/" render={props => {
           return <ListView {...props} notes={notes} />
         }} />
         <Route />
-        <Route path="/notes/:id" render={props => (
+        <Route exact path="/notes/:id" render={props => (
           <Note {...props} notes={notes} />
         )} />
         <Route path="/form" render={props => {
           return <CreateForm {...props} />
         }} />
-        
+        <Route exact path="/edit/:id" render={props => (
+          <EditNote {...props} notes={notes} getNotes={this.getNotes} />
+        )} />
       </div>
     );
   }
