@@ -5,6 +5,7 @@ import ListView from './components/ListView'
 import Note from './components/Note'
 import CreateForm from './components/CreateForm'
 import EditNote from './components/EditNote'
+import DeleteModal from './components/DeleteModal'
 
 import axios from 'axios'
 
@@ -51,13 +52,16 @@ class App extends Component {
         }} />
         <Route />
         <Route exact path="/notes/:id" render={props => (
-          <Note {...props} notes={notes} />
+          <Note {...props} notes={notes} getNotes={this.getNotes} />
         )} />
         <Route path="/form" render={props => {
-          return <CreateForm {...props} />
+          return <CreateForm {...props} getNotes={this.getNotes} />
         }} />
         <Route exact path="/edit/:id" render={props => (
           <EditNote {...props} notes={notes} getNotes={this.getNotes} />
+        )} />
+        <Route path="/delete/:id" render={props => (
+          <DeleteModal {...props} notes={notes} getNotes={this.getNotes} />
         )} />
       </div>
     );

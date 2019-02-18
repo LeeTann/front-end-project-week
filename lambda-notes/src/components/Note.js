@@ -1,21 +1,48 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Note = props => {
+class Note extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            modal: false
+        }
+        this.toggle = this.toggle.bind(this)
+    }
 
-    const id = props.match.params.id
-    const note = props.notes.find(note => `${note._id}` === id)
+    toggle() {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }))
+    }
 
-    return (
-        <div>
+    componentDidMount() {
+        this.props.getNotes(this.props.id)
+    }
+
+    id = this.props.match.params.id
+    note = this.props.notes.find(note => note._id === this.id)
+
+    render() {
+        return (
             <div>
-                <Link to={`/edit/${note._id}`}>Edit</Link>
-                <Link to="/">Delete</Link>
+                <Link to={`/edit/${this.note._id}`}>
+                    <button>
+                        Edit
+                    </button>
+                </Link>
+                <Link to={`/delete/${this.note._id}`}>
+                    <button>Delete</button>
+                </Link>
+                
+                <div>
+                    {this.note.title}
+                    {this.note.textBody}
+                </div> 
             </div>
-            {note.title}
-            {note.textBody}
-        </div>
-    )
+        )
+    }
+    
 }
 
 export default Note

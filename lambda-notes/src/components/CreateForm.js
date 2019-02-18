@@ -8,7 +8,7 @@ class CreateForm extends React.Component {
           title: "",
           textBody: ""
         }
-      }
+    }
 
     handleChange = (e) => {
         this.setState({ [e.target.name ]: e.target.value})
@@ -16,17 +16,10 @@ class CreateForm extends React.Component {
 
     addNote = e => {
         e.preventDefault()
-        const note = {
-            title: this.state.title,
-            textBody: this.state.textBody
-        }
-        axios.post('https://fe-notes.herokuapp.com/note/create', note)
+        axios.post('https://fe-notes.herokuapp.com/note/create', this.state)
         .then(res => {
           console.log(res)
-          this.setState({ title: "", textBody: ""})
-        })
-        .catch(err => {
-          console.log(err)
+          this.props.getNotes()
         })
         this.props.history.push('/')
     }
