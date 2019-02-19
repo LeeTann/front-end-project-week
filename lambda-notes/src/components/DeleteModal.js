@@ -54,8 +54,8 @@ class DeleteModal extends React.Component {
               Are you Sure you want to Delete this?
           </ModalBody>
           <ModalFooter className="mx-auto" >
-              <button onClick={this.deleteHandler}>Delete</button>{' '}
-              <button onClick={this.backToNote}>No</button>
+              <button onClick={this.deleteHandler} className="deleteButton">Delete</button>{' '}
+              <button onClick={this.backToNote} className="myButton">No</button>
           </ModalFooter>
         </Modal>     
       </div>

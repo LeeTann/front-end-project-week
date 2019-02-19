@@ -38,31 +38,35 @@ class App extends Component {
     const { notes } = this.state
     return (
       <div className="App">
-        <ul className="navbar">
-          <h1>Lambda Notes</h1>
-          <li>
-            <NavLink to="/"><button>View Your Notes</button></NavLink>
-          </li>
-          <li>
-            <NavLink to="/form"><button>+ Create New Note</button></NavLink>
-          </li>
-        </ul>
-        <Route exact path="/" render={props => {
-          return <ListView {...props} notes={notes} />
-        }} />
-        <Route />
-        <Route exact path="/notes/:id" render={props => (
-          <Note {...props} notes={notes} getNotes={this.getNotes} />
-        )} />
-        <Route path="/form" render={props => {
-          return <CreateForm {...props} getNotes={this.getNotes} />
-        }} />
-        <Route exact path="/edit/:id" render={props => (
-          <EditNote {...props} notes={notes} getNotes={this.getNotes} />
-        )} />
-        <Route path="/delete/:id" render={props => (
-          <DeleteModal {...props} notes={notes} getNotes={this.getNotes} />
-        )} />
+        <div className="mainNavbar">
+          <div>
+            <h1 className="darkgreyTitle">Lambda Notes</h1>
+          </div>   
+          <div className="navButton1">
+            <NavLink to="/"><button className="myButton">View Your Notes</button></NavLink>
+          </div>
+          <div className="navButton2">
+            <NavLink to="/form"><button className="myButton">+ Create New Note</button></NavLink>
+          </div>       
+        </div>
+        <div className="content">
+          <Route exact path="/" render={props => {
+            return <ListView {...props} notes={notes} />
+          }} />
+          <Route />
+          <Route exact path="/notes/:id" render={props => (
+            <Note {...props} notes={notes} getNotes={this.getNotes} />
+          )} />
+          <Route path="/form" render={props => {
+            return <CreateForm {...props} getNotes={this.getNotes} />
+          }} />
+          <Route exact path="/edit/:id" render={props => (
+            <EditNote {...props} notes={notes} getNotes={this.getNotes} />
+          )} />
+          <Route path="/delete/:id" render={props => (
+            <DeleteModal {...props} notes={notes} getNotes={this.getNotes} />
+          )} />
+        </div>
       </div>
     );
   }

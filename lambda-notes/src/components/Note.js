@@ -25,20 +25,17 @@ class Note extends React.Component {
 
     render() {
         return (
-            <div>
-                <Link to={`/edit/${this.note._id}`}>
-                    <button>
-                        Edit
-                    </button>
-                </Link>
-                <Link to={`/delete/${this.note._id}`}>
-                    <button>Delete</button>
-                </Link>
-                
-                <div>
-                    {this.note.title}
-                    {this.note.textBody}
+            <div className="notePage">
+                <div className="noteHeader">
+                    <Link to={`/delete/${this.note._id}`} className="noteLink">delete</Link>
+                    <Link to={`/edit/${this.note._id}`} className="noteLink">edit</Link>             
+                </div>                        
+                <div className="noteTitle">
+                    {this.note.title}                  
                 </div> 
+                <div className="noteBody">
+                    {this.note.textBody}
+                </div>
             </div>
         )
     }

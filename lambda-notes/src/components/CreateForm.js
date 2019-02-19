@@ -26,24 +26,26 @@ class CreateForm extends React.Component {
 
     render() {
         return(
-            <div className="form-wrapper">
-                <h2>Add New Notes</h2>
-                <form onSubmit={this.addNote}>
+            <div className="formPage">
+                <h2 className="darkgreyTitle h2Title">Create New Notes</h2>
+                <form className="form" onSubmit={this.addNote}>
                     <input
+                        className="titleInput"
                         name="title"
                         value={this.state.title}
                         type="text" 
                         placeholder="Title"
                         onChange={this.handleChange}
-                    />
+                    /><br/>
                      <input
+                        className="bodyInput"
                         name="textBody"
                         value={this.state.textBody}
                         type="text" 
                         placeholder="Text Body"
                         onChange={this.handleChange}
-                    />
-                    <button type="submit">Add</button>
+                    /><br/>
+                    <button className="myButton addButton" type="submit">Add</button>
                 </form>
             </div>
         )

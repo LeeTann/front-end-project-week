@@ -31,6 +31,7 @@ class EditNote extends React.Component {
         axios.put(`https://fe-notes.herokuapp.com/note/edit/${id}`, this.state)
         .then(res => {
             console.log(res)
+            this.setState({ title: "", textBody: ""})
             this.props.getNotes()
         })
         this.props.history.push('/')
@@ -42,11 +43,12 @@ class EditNote extends React.Component {
 
     render() {
         return(
-            <div className="form-wrapper">
-                <h2>Edit Notes</h2>
+            <div className="formPage">
+                <h2 className="darkgreyTitle h2Title">Edit Notes</h2>
                 
-                <form onSubmit={this.submitEdit}>
+                <form className="form" onSubmit={this.submitEdit}>
                     <input
+                        className="titleInput"
                         name="title"
                         value={this.state.title}
                         type="text" 
@@ -54,13 +56,14 @@ class EditNote extends React.Component {
                         onChange={this.handleChange}
                     />
                      <input
+                        className="bodyInput"
                         name="textBody"
                         value={this.state.textBody}
                         type="text" 
                         placeholder="Text Body"
                         onChange={this.handleChange}
                     />
-                    <button>Edit</button>                   
+                    <button className="myButton addButton" type="submit">Edit</button>                   
                 </form>
                          
             </div>
