@@ -1,9 +1,10 @@
 .App {
   display: flex;
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   margin: 0 auto;
   height: auto;
-  color: rgb(63, 61, 61);
+  color: rgb(63, 61, 61); */
+  height: 100%;
 }
 
 .mainNavbar {
@@ -13,6 +14,7 @@
   color: hsla(0,0%,100%,.75);
   padding: 20px;
   position: relative;
+  height: 100vh, auto;
 }
 
 .darkgreyTitle {
@@ -33,8 +35,14 @@
  padding: 22px 0 15px 0;
 }
 
+.navButton2 {
+  padding-bottom: 15px;
+}
+
 .containerListview {
   background-color: #f2f1f2;
+  height: 100%;
+  width: 85vw;
 }
 
 .h2Title {
@@ -48,13 +56,14 @@
   width: 100%;
   max-height: 100%;
   flex-wrap: wrap;
-  margin: 0px 20px ;
+  margin: 0px 20px;
+
 }
 
 .card {
-  width: 28%;
-  margin: 0 auto;
-  margin: 10px 10px;
+  width: 20rem;
+  height: auto;
+  margin: 15px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: black;
@@ -120,7 +129,6 @@
   float: right;
   padding: 10px;
   font-weight: bold;
-
 }
 
 .noteTitle {
@@ -142,4 +150,11 @@
   width: 200px;
   height: 50px;
   font-size: 16px;
+}
+
+.inputBox {
+  width: 25%;
+  margin-left: 35px;
+  padding-left: 2px;
+  border: 1.5px solid lightgray;
 }

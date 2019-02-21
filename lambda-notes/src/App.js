@@ -7,6 +7,7 @@ import CreateForm from './components/CreateForm'
 import EditNote from './components/EditNote'
 import DeleteModal from './components/DeleteModal'
 
+
 import axios from 'axios'
 
 import './App.css';
@@ -33,7 +34,7 @@ class App extends Component {
   componentDidMount() {
     this.getNotes()
   }
-
+  
   render() {
     const { notes } = this.state
     return (
@@ -47,7 +48,7 @@ class App extends Component {
           </div>
           <div className="navButton2">
             <NavLink to="/form"><button className="myButton">+ Create New Note</button></NavLink>
-          </div>       
+          </div> 
         </div>
         <div className="content">
           <Route exact path="/" render={props => {

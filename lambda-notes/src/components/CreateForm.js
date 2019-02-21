@@ -29,7 +29,7 @@ class CreateForm extends React.Component {
             <div className="formPage">
                 <h2 className="darkgreyTitle h2Title">Create New Notes</h2>
                 <form className="form" onSubmit={this.addNote}>
-                    <input
+                    <textarea
                         className="titleInput"
                         name="title"
                         value={this.state.title}
@@ -37,7 +37,7 @@ class CreateForm extends React.Component {
                         placeholder="Title"
                         onChange={this.handleChange}
                     /><br/>
-                     <input
+                     <textarea
                         className="bodyInput"
                         name="textBody"
                         value={this.state.textBody}
