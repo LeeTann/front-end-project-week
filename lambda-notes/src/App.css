@@ -1,0 +1,161 @@
+.App {
+  display: flex;
+  /* box-sizing: border-box;
+  margin: 0 auto;
+  height: auto;
+  color: rgb(63, 61, 61); */
+  height: 100vh, auto;
+}
+
+.mainNavbar {
+  display: flex;
+  flex-direction: column;
+  background-color:#c1c0c0;
+  color: hsla(0,0%,100%,.75);
+  padding: 20px;
+  position: relative;
+  height: 100vh, auto;
+}
+
+.darkgreyTitle {
+  color: rgb(63, 61, 61);
+  font-weight: bold;
+}
+
+.myButton { 
+  background-color: #24b8bd;
+  color: hsla(0,0%,100%,.75);
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navButton1 {
+ padding: 22px 0 15px 0;
+}
+
+.navButton2 {
+  padding-bottom: 15px;
+}
+
+.containerListview {
+  background-color: #f2f1f2;
+  height: 100%;
+  width: 85vw;
+}
+
+.h2Title {
+  padding-top: 70px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.listview {
+  display: flex;
+  width: 100%;
+  max-height: 100%;
+  flex-wrap: wrap;
+  margin: 0px 20px;
+
+}
+
+.card {
+  width: 20rem;
+  height: auto;
+  margin: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: black;
+  padding: 20px;
+}
+
+.cardTitle {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  text-decoration: none;
+  
+}
+
+.formPage {
+  background-color: #f2f1f2;
+  width: 100vw;
+  height: 100vh;
+  color: black;
+}
+
+.form {
+  padding-left: 20px;
+}
+
+.titleInput {
+  width: 30%;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.bodyInput {
+  width: 50%;
+  height: 300px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.addButton {
+  margin-left: 10px;
+}
+
+.notePage {
+  background-color: #f2f1f2;
+  width: 80vw;
+  height: 100vh;
+  color: black;
+  padding-right: 100px;
+  display: block;
+}
+
+.noteLink {
+  color: black;
+  text-decoration: underline;
+  float: right;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.noteTitle {
+  padding-top: 80px;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 24px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.noteBody {
+  padding-left: 25px;
+}
+
+.deleteButton {
+  background-color: #ec143c;
+  color: hsla(0,0%,100%,.75);
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.inputBox {
+  width: 25%;
+  margin-left: 35px;
+  padding-left: 2px;
+  border: 1.5px solid lightgray;
+}
+
