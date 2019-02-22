@@ -7,7 +7,6 @@ import CreateForm from './components/CreateForm'
 import EditNote from './components/EditNote'
 import DeleteModal from './components/DeleteModal'
 
-
 import axios from 'axios'
 
 import './App.css';
